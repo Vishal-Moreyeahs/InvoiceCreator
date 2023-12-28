@@ -17,6 +17,7 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
 
 //builder.Services.AddTransient<IGenericRepository, GenericRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IInvoiceCreateRepository, InvoiceCreateRepository>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
