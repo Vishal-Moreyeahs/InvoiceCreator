@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yg4uAXn8eFX9bvCJGbvEJI7RN2fJnH0z2rjAfhWNJ6Y=",
+  "Source": "OCRInvoice",
+  "BasePath": "_content/OCRInvoice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
