@@ -21,12 +21,9 @@ namespace OCRInvoice.Services
             {
                 var lineItemMasters = new List<LineItemMaster>();
                 if (invoice == null || invoice.Worksheet1.Count==0 || invoice.Worksheet2.Count == 0)
-                { 
-                    return new ApiResponse { 
-                        StatusCode = (int)StatusCode.BadRequest,
-                        Success = false,
-                        Message = "Request Body is incorrect"
-                    };
+                {
+
+                    throw new ApplicationException($"Request Body is incorrect");
                 }
                 var data = invoice.Worksheet1.FirstOrDefault();
                 var customer = new Customer
@@ -75,29 +72,19 @@ namespace OCRInvoice.Services
                     }
                     else 
                     {
-                        return new ApiResponse
-                        {
-                            StatusCode = (int)StatusCode.BadRequest,
-                            Success = false,
-                            Message = "Line Items not added"
-                        }; 
+                        throw new ApplicationException("Line Items not added");
                     }
                 }
                 else
-                { 
-                    return new ApiResponse
-                    {
-                        StatusCode = (int)StatusCode.BadRequest,
-                        Success = false,
-                        Message = "Data can not added in database"
-                    };
+                {
+                    throw new ApplicationException("Data can not added in database");
                 }
             }
             catch(Exception ex)
             {
                 return new ApiResponse
                 {
-                    StatusCode = (int)StatusCode.InternalServerError,
+                    StatusCode = (int)StatusCode.BadRequest,
                     Success = false,
                     Message = $"An error occurred: {ex.Message}"
                 };

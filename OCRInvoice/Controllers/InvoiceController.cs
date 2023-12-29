@@ -33,7 +33,11 @@ namespace OCRInvoice.Controllers
         public async Task<IActionResult> UpdateInvoiceOcr(InvoiceOcrRequest invoice)
         {
             var response = await _invoiceCreateRepository.CreateInvoice(invoice);
-            return Ok(response);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
         }
     }
 }
