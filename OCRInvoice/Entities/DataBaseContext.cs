@@ -14,6 +14,8 @@ namespace OCRInvoice.Entities
         public virtual DbSet<InvoiceMaster> InvoiceMasters { get; set; }
         public virtual DbSet<LineItemMaster> LineItemMasters { get; set; }
 
+        public virtual DbSet<InvoiceImage> InvoiceImages { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataBaseContext).Assembly);

@@ -9,6 +9,7 @@ namespace OCRInvoice.Interfaces
         ILineItemMasterRepository LineItemMaster { get; }
 
         ICustomerRepository Customer { get; }
+        IInvoiceImageRepository InvoiceImage { get; }
         Task SaveAsync(); 
     }
 }

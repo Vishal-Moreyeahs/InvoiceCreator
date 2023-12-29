@@ -1,6 +1,8 @@
 using System.Reflection;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.FileProviders;
 using OCRInvoice.Entities;
 using OCRInvoice.Interfaces;
 using OCRInvoice.Services;
@@ -18,6 +20,8 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
 //builder.Services.AddTransient<IGenericRepository, GenericRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IInvoiceCreateRepository, InvoiceCreateRepository>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

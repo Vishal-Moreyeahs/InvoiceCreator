@@ -53,6 +53,28 @@ namespace OCRInvoice.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("OCRInvoice.Entities.InvoiceImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("InvoiceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InvoiceImages");
+                });
+
             modelBuilder.Entity("OCRInvoice.Entities.InvoiceMaster", b =>
                 {
                     b.Property<int>("InvoiceID")
@@ -77,6 +99,9 @@ namespace OCRInvoice.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InvoiceNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OcrPercentage")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProviderName")

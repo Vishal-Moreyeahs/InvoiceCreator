@@ -14,6 +14,7 @@ namespace OCRInvoice.Services
 
         public ILineItemMasterRepository LineItemMaster { get; private set; }
 
+        public IInvoiceImageRepository InvoiceImage { get; private set; }
 
         public UnitOfWork(
             DataBaseContext context
@@ -24,6 +25,7 @@ namespace OCRInvoice.Services
             LineItemMaster = new LineItemMasterRepository(_context);
             Customer = new CustomerRepository(_context);
             InvoiceMaster = new InvoiceMasterRepository(_context);
+            InvoiceImage = new InvoiceImageRepository(_context);
         }
 
         public void Dispose()

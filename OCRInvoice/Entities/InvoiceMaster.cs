@@ -21,5 +21,6 @@ namespace OCRInvoice.Entities
         public string? Tax2 { get; set; }
         public string? Tax3 { get; set; }
         public string? ImageUrl { get; set; }
+        public string? OcrPercentage { get; set; }
     }
 }
