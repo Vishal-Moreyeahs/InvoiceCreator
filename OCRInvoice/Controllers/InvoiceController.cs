@@ -35,14 +35,7 @@ namespace OCRInvoice.Controllers
         public async Task<IActionResult> UpdateInvoiceOcr(InvoiceOcrRequest invoice)
         {
             var response = await _invoiceCreateRepository.CreateInvoice(invoice);
-            if (response)
-            {
-                return Ok(new { Status = true, Message = "Data Added Successully" });
-            }
-            else 
-            {
-                return Ok(new { Status = false, Message = "Data Not Processed" });
-            }
+            return Ok(response);
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using OCRInvoice.Entities;
+using OCRInvoice.Enums;
 using OCRInvoice.Interfaces;
+using OCRInvoice.Models;
 using OCRInvoice.Models.Request;
 
 namespace OCRInvoice.Services
@@ -13,13 +15,18 @@ namespace OCRInvoice.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> CreateInvoice(InvoiceOcrRequest invoice)
+        public async Task<ApiResponse> CreateInvoice(InvoiceOcrRequest invoice)
         {
             try
-            { 
-                if (invoice == null)
+            {
+                var lineItemMasters = new List<LineItemMaster>();
+                if (invoice == null || invoice.Worksheet1.Count==0 || invoice.Worksheet2.Count == 0)
                 { 
-                    return false;
+                    return new ApiResponse { 
+                        StatusCode = (int)StatusCode.BadRequest,
+                        Success = false,
+                        Message = "Request Body is incorrect"
+                    };
                 }
                 var data = invoice.Worksheet1.FirstOrDefault();
                 var customer = new Customer
@@ -40,36 +47,60 @@ namespace OCRInvoice.Services
 
                 var isCustomerAdded = await _unitOfWork.Customer.Add(customer);
                 var isInvoiceMasterAdded = await _unitOfWork.InvoiceMaster.Add(invoiceMaster);
-                await _unitOfWork.SaveAsync();
-
+               
                 if (isCustomerAdded && isInvoiceMasterAdded)
                 {
+                    await _unitOfWork.SaveAsync();
                     foreach (var item in invoice.Worksheet2)
                     {
-                        var lineItem = new LineItemMaster
+                        lineItemMasters.Add(new LineItemMaster
                         {
                             ItemName = item.ItemName,
                             Price = item.ItemRate,
                             InvoiceID = invoiceMaster.InvoiceID,
                             Qty = item.ItemQuantity,
-                            Tax = item.ItemTax,
-                        };
-                        var isLineItemsAdded = await _unitOfWork.LineItemMaster.Add(lineItem);
-                        if (isLineItemsAdded)
-                        {
-                            await _unitOfWork.SaveAsync();
-                        }
+                            Tax = item.ItemTax
+                        });
                     }
-                    return true;
+                    var isLineItemsAdded = await _unitOfWork.LineItemMaster.AddRange(lineItemMasters);
+                    if (isLineItemsAdded)
+                    {
+                        await _unitOfWork.SaveAsync();
+                        return new ApiResponse
+                        {
+                            StatusCode = (int)StatusCode.Success,
+                            Success = true,
+                            Message = "Data Added Successfully"
+                        };
+                    }
+                    else 
+                    {
+                        return new ApiResponse
+                        {
+                            StatusCode = (int)StatusCode.BadRequest,
+                            Success = false,
+                            Message = "Line Items not added"
+                        }; 
+                    }
                 }
                 else
                 { 
-                    return false;
+                    return new ApiResponse
+                    {
+                        StatusCode = (int)StatusCode.BadRequest,
+                        Success = false,
+                        Message = "Data can not added in database"
+                    };
                 }
             }
             catch(Exception ex)
-            { 
-                return false; 
+            {
+                return new ApiResponse
+                {
+                    StatusCode = (int)StatusCode.InternalServerError,
+                    Success = false,
+                    Message = $"An error occurred: {ex.Message}"
+                };
             }
         }
     }

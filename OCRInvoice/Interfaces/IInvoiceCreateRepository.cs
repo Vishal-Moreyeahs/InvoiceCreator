@@ -1,9 +1,10 @@
-﻿using OCRInvoice.Models.Request;
+﻿using OCRInvoice.Models;
+using OCRInvoice.Models.Request;
 
 namespace OCRInvoice.Interfaces
 {
     public interface IInvoiceCreateRepository
     {
-        Task<bool> CreateInvoice(InvoiceOcrRequest request);
+        Task<ApiResponse> CreateInvoice(InvoiceOcrRequest request);
     }
 }

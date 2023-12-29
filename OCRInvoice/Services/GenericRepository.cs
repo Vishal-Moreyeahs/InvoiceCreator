@@ -49,6 +49,20 @@ namespace OCRInvoice.Services
             }
         }
 
+        public virtual async Task<bool> AddRange(IEnumerable<T> entities)
+        {
+            try
+            {
+                await dbSet.AddRangeAsync(entities);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+
         public virtual async Task<bool> Delete(int id)
         {
             try
