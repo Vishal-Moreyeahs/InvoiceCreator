@@ -12,23 +12,21 @@ namespace OCRInvoice.Controllers
     public class InvoiceController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
         private readonly IInvoiceCreateRepository _invoiceCreateRepository;
-        public InvoiceController(IUnitOfWork unitOfWork, IMapper mapper, IInvoiceCreateRepository invoiceCreateRepository)
+        public InvoiceController(IUnitOfWork unitOfWork, IInvoiceCreateRepository invoiceCreateRepository)
         {
             _unitOfWork = unitOfWork;
-            _mapper = mapper;
             _invoiceCreateRepository = invoiceCreateRepository;
         }
 
-        [HttpPost]
-        [Route("addInvoice")]
-        public async Task<IActionResult> AddInvoice(InvoiceMaster invoiceMaster)
-        {
-            var result = await _unitOfWork.InvoiceMaster.Add(invoiceMaster);
-            await _unitOfWork.SaveAsync();
-            return Ok(result);
-        }
+        //[HttpPost]
+        //[Route("addInvoice")]
+        //public async Task<IActionResult> AddInvoice(InvoiceMaster invoiceMaster)
+        //{
+        //    var result = await _unitOfWork.InvoiceMaster.Add(invoiceMaster);
+        //    await _unitOfWork.SaveAsync();
+        //    return Ok(result);
+        //}
 
         [HttpPost]
         [Route("updateInvoiceToDb")]
