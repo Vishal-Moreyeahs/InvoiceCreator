@@ -5,6 +5,8 @@ C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\OCRInvoice
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\OCRInvoice.runtimeconfig.json
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\OCRInvoice.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\OCRInvoice.pdb
+C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Humanizer.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -22,6 +24,7 @@ C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Microsoft.
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -66,5 +69,3 @@ C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Debug\net6.0\refint\OCR
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Debug\net6.0\OCRInvoice.pdb
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Debug\net6.0\OCRInvoice.genruntimeconfig.cache
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Debug\net6.0\ref\OCRInvoice.dll
-C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

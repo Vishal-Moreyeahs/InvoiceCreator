@@ -64,9 +64,6 @@ namespace OCRInvoice.Migrations
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("InvoiceId")
                         .HasColumnType("int");
 

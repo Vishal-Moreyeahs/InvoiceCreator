@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2023-12-29T13:14:38.0446612Z;</History>
+    <History>True|2024-01-03T11:59:18.1088287Z;True|2024-01-03T12:28:02.8521313+05:30;True|2024-01-03T11:54:52.2788995+05:30;True|2023-12-29T18:44:38.0446612+05:30;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

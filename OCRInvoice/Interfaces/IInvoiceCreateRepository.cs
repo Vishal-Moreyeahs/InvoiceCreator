@@ -5,6 +5,6 @@ namespace OCRInvoice.Interfaces
 {
     public interface IInvoiceCreateRepository
     {
-        Task<ApiResponse> CreateInvoice(InvoiceOcrRequest request);
+        Task<ApiResponse<dynamic>> CreateInvoice(InvoiceOcrRequest request);
     }
 }

@@ -12,6 +12,5 @@ namespace OCRInvoice.Entities
 
         public int? InvoiceId { get; set; }
         public byte[]? Image { get; set; }
-        public string? ImagePath { get; set; }
     }
 }

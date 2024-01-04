@@ -50,6 +50,10 @@ namespace OCRInvoice.Models.Request
         [JsonPropertyName("total_amount")]
         [DefaultValue("705714.08")]
         public double? TotalAmount { get; set; }
+
+        [JsonPropertyName("clarity_percentage")]
+        [DefaultValue("4.08120484758166")]
+        public string? OcrPercentage { get; set; }
     }
 
     public class Worksheet2Item

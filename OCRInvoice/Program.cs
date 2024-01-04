@@ -1,10 +1,8 @@
 using System.Reflection;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.FileProviders;
 using OCRInvoice.Entities;
 using OCRInvoice.Interfaces;
+using OCRInvoice.Middleware;
 using OCRInvoice.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<DataBaseContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"))
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ProdDBConnection"))
             );
 
 //builder.Services.AddTransient<IGenericRepository, GenericRepository>();
@@ -28,13 +26,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+app.UseSwagger();
+app.UseSwaggerUI();
+//}
 
 app.UseHttpsRedirection();
 

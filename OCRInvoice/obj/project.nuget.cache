@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dUJwoDxDbvfM+E/PcCc23Cgupp4PvAx6nTkwblCVJNWT107agnX94BIJrFyTQhdRFulIN0qpBC5T+0xMpofTTw==",
+  "dgSpecHash": "6pPEdexeayLLoHWSmX5HP/qpKEgHTy1mnRoaxU9+tg616tXtrqi3Uot67M/LoK55zFKzdyyA1ZNIOe/FKEPW6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\LMS\\OCRInvoice\\OCRInvoice\\OCRInvoice.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

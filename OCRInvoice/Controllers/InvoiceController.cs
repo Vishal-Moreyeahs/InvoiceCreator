@@ -36,12 +36,7 @@ namespace OCRInvoice.Controllers
         [Route("updateInvoiceToDb")]
         public async Task<IActionResult> UpdateInvoiceOcr(InvoiceOcrRequest invoice)
         {
-            var response = await _invoiceCreateRepository.CreateInvoice(invoice);
-            if (response.Success)
-            {
-                return Ok(response);
-            }
-            return BadRequest(response);
+            return Ok(await _invoiceCreateRepository.CreateInvoice(invoice));
         }
 
         [HttpPost]
@@ -71,22 +66,22 @@ namespace OCRInvoice.Controllers
                     Directory.CreateDirectory(directoryPath);
                 }
 
-                var fileName = Path.Combine(directoryPath, Path.GetRandomFileName());
+                //var fileName = Path.Combine(directoryPath, string.Concat("invoice-",Path.GetRandomFileName()));
 
-                // Use FileStream to directly save the file
-                using (var fileStream = new FileStream(fileName, FileMode.Create))
-                {
-                    await uploadInvoice.CopyToAsync(fileStream);
-                }
+                //// Use FileStream to directly save the file
+                //using (var fileStream = new FileStream(fileName, FileMode.Create))
+                //{
+                //    await uploadInvoice.CopyToAsync(fileStream);
+                //}
 
-                string fileUrl = GenerateFileUrl(fileName);
-
+                //string fileUrl = GenerateFileUrl(fileName);
+                
                 // Save the photo data and ID to the database
-                var photo = new InvoiceImage { InvoiceId = invoiceId, Image = photoData, ImagePath = fileUrl };
+                var photo = new InvoiceImage { InvoiceId = invoiceId, Image = photoData};
                 var response = await _unitOfWork.InvoiceImage.Add(photo);
                 await _unitOfWork.SaveAsync();
 
-                return Ok(new { Id = photo.InvoiceId, FileUrl = fileUrl });
+                return Ok(new { Id = photo.InvoiceId});
             }
             catch (Exception ex)
             {

@@ -21,6 +21,7 @@ C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\O
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\user\source\repos\LMS\OCRInvoice\OCRInvoice\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
